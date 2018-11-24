@@ -8,7 +8,7 @@ import datetime
 
 twitter = OAuth1Session(os.environ["CONSUMER_KEY"],  os.environ["CONSUMER_SECRET"], os.environ["ACCESS_TOKEN_KEY"], os.environ["ACCESS_TOKEN_SECRET"])
 
-tweets = ["シクロクロスbotのテスト運用中。AJOCCの公式アカウントはこちら https://twitter.com/cyclocross_jp","bot定期投稿　AJOCCの公式サイトはこちら https://www.cyclocross.jp/"]
+tweets = ["botのテスト運用。AJOCCの公式アカウントはこちら https://twitter.com/cyclocross_jp","bot定期投稿　AJOCCの公式サイトはこちら https://www.cyclocross.jp/"]
 
 randomtweet = tweets[random.randrange(len(tweets))]
 
