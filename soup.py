@@ -22,5 +22,10 @@ twitter = OAuth1Session(os.environ["CONSUMER_KEY"],  os.environ["CONSUMER_SECRET
 tweet = h2.string + a
 params = {"status": tweet}
 
+# Get your "home" timeline
+# response = t.statuses.home_timeline()
+# print(response)
+
+
 req = twitter.post("https://api.twitter.com/1.1/statuses/update.json", params = params)
 
