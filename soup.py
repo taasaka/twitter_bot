@@ -20,9 +20,10 @@ d = d.string
 a = soup.find("p", class_="click")
 a = a.find("a")
 a = a.attrs['href']
+news_by_account = "News by @cyclocross_jp"
 
 twitter = OAuth1Session(os.environ["CONSUMER_KEY"],  os.environ["CONSUMER_SECRET"], os.environ["ACCESS_TOKEN_KEY"], os.environ["ACCESS_TOKEN_SECRET"])
-tweet = h2.string + a
+tweet = h2.string + a + news_by_account 
 params = {"status": tweet}
 
 if d == now_format:
