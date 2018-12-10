@@ -23,13 +23,14 @@ a = a.attrs['href']
 day = soup.find("span", class_="d")
 day = day.string
 slice = day[0:6]
+slice2 = day[0:4]
 
 twitter = OAuth1Session(os.environ["CONSUMER_KEY"],  os.environ["CONSUMER_SECRET"], os.environ["ACCESS_TOKEN_KEY"], os.environ["ACCESS_TOKEN_SECRET"])
 tweet = h2.string + a
 params = {"status": tweet}
 
-if slice == now_format:
-	req = twitter.post("https://api.twitter.com/1.1/statuses/update.json", params = params)
+#if slice == now_format or slice2 == :
+req = twitter.post("https://api.twitter.com/1.1/statuses/update.json", params = params)
 #print(now_format)
 #print(slice)
 #print(tweet)
