@@ -8,7 +8,7 @@ import pytz
 
 headers = {'User-Agent':'Mozilla/5.0'}
 
-url = 'https://news.yahoo.co.jp/search/?ei=UTF-8&p=%E3%82%B7%E3%82%AF%E3%83%AD%E3%82%AF%E3%83%AD%E3%82%B9'
+url = 'https://news.yahoo.co.jp/search/;_ylt=A2RivbFkExFcgRkARCcPk.d7?p=%E3%82%B7%E3%82%AF%E3%83%AD%E3%82%AF%E3%83%AD%E3%82%B9+-%E7%A6%8F%E5%85%89&aq=-1&oq=&ei=UTF-8'
 soup = BeautifulSoup(requests.get(url).content,'html.parser')
 
 now = datetime.datetime.now(pytz.timezone('Asia/Tokyo'))
