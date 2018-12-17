@@ -27,7 +27,7 @@ slice5 = day[:5]
 slice4 = day[:4]
 
 twitter = OAuth1Session(os.environ["CONSUMER_KEY"],  os.environ["CONSUMER_SECRET"], os.environ["ACCESS_TOKEN_KEY"], os.environ["ACCESS_TOKEN_SECRET"])
-tweet = h2.string + a
+tweet = h2.string + str(a)
 params = {"status": tweet}
 
 if slice6 == now_format or slice5 == now_format or slice4 == now_format:
