@@ -20,7 +20,7 @@ d = d.string
 a = soup.find("h2", class_="t")
 a = a.find("a")
 a = a.attrs['href']
-a = a.string
+# a = a.string
 day = soup.find("span", class_="d")
 day = day.string
 slice6 = day[:6]
