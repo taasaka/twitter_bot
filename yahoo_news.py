@@ -33,8 +33,7 @@ try:
 	if slice6 == now_format or slice5 == now_format or slice4 == now_format:
 		req = twitter.post("https://api.twitter.com/1.1/statuses/update.json", params = params)
 except:
-	continue
-	
+	a = 1
 
 #print(now_format)
 #print(slice)
