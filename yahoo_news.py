@@ -14,25 +14,24 @@ soup = BeautifulSoup(requests.get(url).content,'html.parser')
 now = datetime.datetime.now(pytz.timezone('Asia/Tokyo'))
 now_format = "{0:%m月%d日}".format(now)
 
-h2 = soup.html.h2
-d = soup.find("h2", class_="t")
-d = d.string
-a = soup.find("h2", class_="t")
-a = a.find("a")
-a = a.attrs['href']
-# a = a.string
-day = soup.find("span", class_="d")
-day = day.string
-slice6 = day[:6]
-slice5 = day[:5]
-slice4 = day[:4]
+try:
+	h2 = soup.html.h2
+	d = soup.find("h2", class_="t")
+	d = d.string
+	a = soup.find("h2", class_="t")
+	a = a.find("a")
+	a = a.attrs['href']
+	day = soup.find("span", class_="d")
+	day = day.string
+	slice6 = day[:6]
+	slice5 = day[:5]
+	slice4 = day[:4]
 
-twitter = OAuth1Session(os.environ["CONSUMER_KEY"],  os.environ["CONSUMER_SECRET"], os.environ["ACCESS_TOKEN_KEY"], os.environ["ACCESS_TOKEN_SECRET"])
-tweet = h2.string + a
-params = {"status": tweet}
-
-if slice6 == now_format or slice5 == now_format or slice4 == now_format:
-	req = twitter.post("https://api.twitter.com/1.1/statuses/update.json", params = params)
+	twitter = OAuth1Session(os.environ["CONSUMER_KEY"],  os.environ["CONSUMER_SECRET"], os.environ["ACCESS_TOKEN_KEY"], os.environ["ACCESS_TOKEN_SECRET"])
+	tweet = h2.string + a
+	params = {"status": tweet}
+	if slice6 == now_format or slice5 == now_format or slice4 == now_format:
+		req = twitter.post("https://api.twitter.com/1.1/statuses/update.json", params = params)
 #print(now_format)
 #print(slice)
 #print(tweet)
