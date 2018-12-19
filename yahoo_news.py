@@ -34,8 +34,3 @@ try:
 		req = twitter.post("https://api.twitter.com/1.1/statuses/update.json", params = params)
 except:
 	pass
-
-#print(now_format)
-#print(slice)
-#print(tweet)
-#print(params)
