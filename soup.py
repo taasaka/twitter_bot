@@ -8,6 +8,8 @@ import pytz
 
 headers = {'User-Agent':'Mozilla/5.0'}
 
+# AJOCCのニュースをスクレイピングしてツイート
+
 url = 'https://www.cyclocross.jp/news/'
 soup = BeautifulSoup(requests.get(url).content,'html.parser')
 
